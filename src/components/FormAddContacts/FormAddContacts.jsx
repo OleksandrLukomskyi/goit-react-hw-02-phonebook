@@ -23,7 +23,7 @@
      
          }
 
-         reset = () => {
+   reset = () => {
             this.setState({name: ''})
          }
 
