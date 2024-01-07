@@ -4,6 +4,7 @@ import ContactList from 'components/ContactList';
 import Filter from 'components/Filter';
 import { nanoid } from 'nanoid';
 import css from './App.module.css';
+
 class App extends Component {
 
    state = {
@@ -16,14 +17,10 @@ class App extends Component {
 
     
 
-   handleAddContact = (name, number,) => {
-    
-      const {contacts} = this.state;
-       
-     
 
-     
-      const isExist = contacts.some(
+   handleAddContact = (name, number) => {
+         const {contacts} = this.state;
+         const isExist = contacts.some(
          contact => contact.name === name.trim() || contact.number === number.trim());
       
       if (isExist) {
@@ -31,8 +28,7 @@ class App extends Component {
          return;
       }
 
-
- const newContact = {
+   const newContact = {
          id: nanoid(),
          name: name.trim(),
          number: number.trim(),
